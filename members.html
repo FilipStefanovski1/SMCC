@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Members – Swedish–Macedonian Chamber of Commerce</title>
+    <meta
+      name="description"
+      content="Information about membership in the Swedish–Macedonian Chamber of Commerce, benefits and how to join."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- Page-only styles for Gold/Silver/Bronze section (premium, safe) -->
+    <style>
+      .member-tiers {
+        padding: 56px 0;
+        background: #f7f8fb;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+      }
+
+      .member-tiers .tiers-header {
+        text-align: center;
+        max-width: 860px;
+        margin: 0 auto 26px auto;
+      }
+
+      .member-tiers .tiers-title {
+        margin: 8px 0 0 0;
+        font-size: 28px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+      }
+
+      .member-tiers .tiers-subtitle {
+        margin: 10px auto 0 auto;
+        color: rgba(0, 0, 0, 0.68);
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      /* Tier card base */
+      .tier-block {
+        margin-top: 22px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 18px;
+        padding: 22px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 160ms ease, box-shadow 160ms ease,
+          border-color 160ms ease;
+      }
+
+      .tier-block:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.08);
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+
+      /* Make Gold feel slightly "hero" */
+      .tier-block--gold {
+        padding: 26px;
+        border-color: rgba(255, 193, 7, 0.22);
+        background: radial-gradient(
+            900px 260px at 30% 0%,
+            rgba(255, 193, 7, 0.16),
+            rgba(255, 255, 255, 0) 60%
+          ),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.96), #fff);
+      }
+
+      .tier-block--silver {
+        border-color: rgba(160, 174, 192, 0.22);
+        background: radial-gradient(
+            900px 260px at 30% 0%,
+            rgba(160, 174, 192, 0.16),
+            rgba(255, 255, 255, 0) 60%
+          ),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.96), #fff);
+      }
+
+      .tier-block--bronze {
+        border-color: rgba(205, 127, 50, 0.22);
+        background: radial-gradient(
+            900px 260px at 30% 0%,
+            rgba(205, 127, 50, 0.16),
+            rgba(255, 255, 255, 0) 60%
+          ),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.96), #fff);
+      }
+
+      /* Tier header */
+      .tier-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 16px;
+      }
+
+      .tier-left {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        min-width: 0;
+      }
+
+      .tier-name {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        font-size: 16px;
+        margin: 0;
+        letter-spacing: 0.01em;
+      }
+
+      .tier-block--gold .tier-name {
+        font-size: 17px;
+      }
+
+      .tier-meta {
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.62);
+        line-height: 1.45;
+      }
+
+      /* Badge */
+      .tier-badge {
+        position: relative;
+        overflow: hidden;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        background: rgba(0, 0, 0, 0.03);
+      }
+
+      .tier-badge::after {
+        content: "";
+        position: absolute;
+        top: -40%;
+        left: -40%;
+        width: 80%;
+        height: 180%;
+        transform: rotate(25deg);
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0.45),
+          rgba(255, 255, 255, 0)
+        );
+        opacity: 0.55;
+      }
+
+      .tier-badge--gold {
+        background: rgba(255, 193, 7, 0.18);
+        border-color: rgba(255, 193, 7, 0.35);
+      }
+
+      .tier-badge--silver {
+        background: rgba(160, 174, 192, 0.18);
+        border-color: rgba(160, 174, 192, 0.35);
+      }
+
+      .tier-badge--bronze {
+        background: rgba(205, 127, 50, 0.18);
+        border-color: rgba(205, 127, 50, 0.35);
+      }
+
+      /* CTA button */
+      .tier-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 14px;
+        border-radius: 999px;
+        font-weight: 800;
+        font-size: 13px;
+        text-decoration: none;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: #0b2344;
+        color: #fff;
+        white-space: nowrap;
+        transition: transform 160ms ease, box-shadow 160ms ease,
+          opacity 160ms ease;
+      }
+
+      .tier-cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 14px 26px rgba(11, 35, 68, 0.18);
+        opacity: 0.98;
+      }
+
+      .tier-cta--light {
+        background: #ffffff;
+        color: #0b2344;
+        border-color: rgba(11, 35, 68, 0.18);
+      }
+
+      .tier-cta--light:hover {
+        box-shadow: 0 14px 26px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Exclusive strip */
+      .tier-strip {
+        margin: 10px 0 0 0;
+        padding: 10px 12px;
+        border-radius: 14px;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        background: rgba(11, 35, 68, 0.03);
+        font-size: 13px;
+        color: rgba(0, 0, 0, 0.65);
+      }
+
+      .tier-strip strong {
+        font-weight: 800;
+        color: rgba(0, 0, 0, 0.76);
+      }
+
+      /* Grid of tiles */
+      .tier-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 14px;
+      }
+
+      .tier-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 92px;
+        border-radius: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        background: linear-gradient(180deg, #fff 0%, #fbfbfd 100%);
+        padding: 14px;
+      }
+
+      /* Premium placeholder tile */
+      .tier-logo--locked {
+        justify-content: flex-start;
+        gap: 12px;
+      }
+
+      .tier-lock {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.04);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        flex: 0 0 auto;
+      }
+
+      .tier-lock svg {
+        width: 18px;
+        height: 18px;
+        fill: rgba(0, 0, 0, 0.55);
+      }
+
+      .tier-lock-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+        gap: 4px;
+        min-width: 0;
+      }
+
+      .tier-lock-text strong {
+        font-size: 13px;
+        font-weight: 900;
+        color: rgba(0, 0, 0, 0.78);
+      }
+
+      .tier-lock-text span {
+        font-size: 12.5px;
+        color: rgba(0, 0, 0, 0.55);
+      }
+
+      /* ✅ Real member tile helper */
+      .tier-logo--member {
+        justify-content: center;
+      }
+
+      .tier-logo--member a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+      }
+
+      .tier-logo--member img {
+        max-width: 100%;
+        max-height: 64px;
+        object-fit: contain;
+        display: block;
+      }
+
+      /* Responsive */
+      @media (max-width: 980px) {
+        .tier-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 760px) {
+        .tier-head {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .tier-cta {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .member-tiers {
+          padding: 44px 0;
+        }
+        .tier-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .tier-logo {
+          height: 86px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .tier-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
+    <script src="https://widget.easeaccess24.com/sdk.js?key=R3Nm9UmVcX"></script>
+  </head>
+
+  <body>
+    <!-- Cookie banner (inside body) -->
+    <div id="cookieBanner" class="cookie-banner">
+      <div class="cookie-banner__inner">
+        <div class="cookie-banner__text">
+          <strong>Cookies & privacy</strong>
+          <p>
+            We use cookies to analyse traffic and improve your experience.
+            Analytics cookies are only loaded after your consent.
+            <a href="cookies.html">Learn more</a>.
+          </p>
+        </div>
+
+        <div class="cookie-banner__actions">
+          <button id="cookieReject" class="btn btn-outline cookie-btn">
+            Reject
+          </button>
+          <button id="cookieAccept" class="btn btn-primary cookie-btn">
+            Accept
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="brand">
+          <div class="brand-logo">
+            <img src="assets/img/logo-smcc.png" alt="SMCC logo" />
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">SWEDISH–MACEDONIAN</span>
+            <span class="brand-subtitle">Chamber of Commerce</span>
+          </div>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="nav-toggle-bar"></span>
+        </button>
+
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="members.html" class="nav-link active">Members</a></li>
+            <li><a href="partners.html" class="nav-link">Partners</a></li>
+            <li><a href="news.html" class="nav-link">News</a></li>
+            <li><a href="events.html" class="nav-link">Events</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Members intro -->
+    <section class="section section--light">
+      <div class="container">
+        <header class="section-header reveal">
+          <div class="section-kicker">Members</div>
+          <h1 class="section-title">
+            A community of Swedish and Macedonian companies
+          </h1>
+          <p class="section-subtitle">
+            SMCC unites companies of all sizes – from start-ups and SMEs to large
+            corporations and institutions – that share an interest in the
+            Swedish and Macedonian markets.
+          </p>
+        </header>
+
+        <div class="split">
+          <div class="reveal">
+            <p class="lead">
+              Members benefit from a structured platform for networking, business
+              development and dialogue with public authorities. The Chamber
+              provides a safe and neutral space where new ideas and
+              collaborations can emerge.
+            </p>
+            <p class="body-text">
+              Our members represent a broad range of sectors including
+              manufacturing, ICT, healthcare, green technologies, professional
+              services, education and creative industries. This diversity
+              creates unique opportunities for cross-sector partnerships.
+            </p>
+
+            <h3 style="margin-top: 22px; font-size: 16px">
+              Why companies join SMCC
+            </h3>
+            <ul class="list-check">
+              <li>
+                <span class="list-check-bullet"></span>
+                <span>Access to curated networking events and delegations.</span>
+              </li>
+              <li>
+                <span class="list-check-bullet"></span>
+                <span>
+                  Practical support when entering a new market or expanding
+                  operations.
+                </span>
+              </li>
+              <li>
+                <span class="list-check-bullet"></span>
+                <span>
+                  Visibility through Chamber communication channels and joint
+                  activities.
+                </span>
+              </li>
+              <li>
+                <span class="list-check-bullet"></span>
+                <span>
+                  Possibility to influence topics of common interest through
+                  working groups and committees.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="image-panel reveal" data-delay="1">
+            <img src="assets/img/NETWORKING.JPG" alt="Members networking" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership options (pricing cards) -->
+    <section class="section pricing-section">
+      <div class="container">
+        <header class="section-header pricing-header reveal">
+          <h2 class="section-title">Membership Options</h2>
+          <p class="section-subtitle">
+            Choose the membership tier that matches your ambitions.
+          </p>
+        </header>
+
+        <div class="pricing-grid">
+          <!-- Bronze -->
+          <article class="pricing-card reveal" data-delay="1">
+            <h3 class="pricing-title">Bronze Membership</h3>
+            <div class="pricing-price">€499 <span>/ year*</span></div>
+            <p class="pricing-note">12 months from the date of joining</p>
+            <p class="pricing-copy">
+              Ideal for companies that want to join the SMCC network and gain
+              visibility in both markets.
+            </p>
+            <ul class="pricing-list">
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>Company listed in the SMCC member directory.</span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Company logo published in SMCC communication (website,
+                  newsletter).
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>Welcome feature in SMCC newsletter.</span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Access to all SMCC events, seminars, and social gatherings at
+                  member rates.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Regular updates with insights on trade, policy, and business
+                  opportunities.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Discounted prices on services offered by the Chamber.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Discounted prices through the SMCC partner network.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>Right to vote at the Annual General Meeting.</span>
+              </li>
+            </ul>
+            <a href="#membership-form" class="btn pricing-btn pricing-btn-outline">
+              Choose Bronze plan
+            </a>
+          </article>
+
+          <!-- Silver -->
+          <article class="pricing-card pricing-card--featured reveal" data-delay="2">
+            <div class="pricing-badge">Most popular</div>
+            <h3 class="pricing-title">Silver Membership</h3>
+            <div class="pricing-price">€999 <span>/ year*</span></div>
+            <p class="pricing-note">12 months from the date of joining</p>
+            <p class="pricing-copy">
+              Perfect for companies seeking higher visibility and closer
+              involvement in Chamber activities.
+            </p>
+            <p class="pricing-copy" style="font-weight: 500">
+              Includes all Bronze benefits, plus:
+            </p>
+            <ul class="pricing-list">
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Company logo featured on the front page of the SMCC website.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Company profile highlighted in SMCC communication and social
+                  media.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Priority invitations to stakeholder meetings and policy
+                  roundtables.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>Opportunity to co-organize events with SMCC.</span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Invitation to exclusive member receptions and business
+                  lunches.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Recognition as a Silver Partner in SMCC promotional materials.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  One-on-one support from the Chamber to maximize membership
+                  benefits.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Advocacy and policy representation – SMCC voices the priorities
+                  and challenges of Silver Members towards institutions,
+                  policymakers, and stakeholders.
+                </span>
+              </li>
+            </ul>
+            <a href="#membership-form" class="btn pricing-btn pricing-btn-primary">
+              Choose Silver plan
+            </a>
+          </article>
+
+          <!-- Gold -->
+          <article class="pricing-card reveal" data-delay="3">
+            <h3 class="pricing-title">Gold Membership</h3>
+            <div class="pricing-price">€1,499 <span>/ year*</span></div>
+            <p class="pricing-note">12 months from the date of joining</p>
+            <p class="pricing-copy">
+              Designed for organisations that want premium visibility and
+              strategic engagement.
+            </p>
+            <p class="pricing-copy" style="font-weight: 500">
+              Includes all Bronze and Silver benefits, plus:
+            </p>
+            <ul class="pricing-list">
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Premium visibility with company logo featured in all SMCC
+                  communication and events.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Priority access for sponsorship and speaking opportunities at
+                  SMCC events.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Featured company spotlight/interview published in SMCC channels.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Recognition as a Gold Partner in SMCC promotional materials.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Unlimited one-on-one meetings and calls with the Chamber.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>Access to exclusive member directory.</span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Option to host one event per year in cooperation with SMCC.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Invitation to exclusive VIP gatherings, high-level roundtables,
+                  and stakeholder dialogues.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Tailored introductions to key stakeholders, partners, and
+                  business opportunities.
+                </span>
+              </li>
+              <li>
+                <span class="pricing-bullet"></span>
+                <span>
+                  Enhanced advocacy and policy engagement – Gold Members receive
+                  prioritized representation in policy discussions and strengthened
+                  visibility in the policy arena.
+                </span>
+              </li>
+            </ul>
+            <a href="#membership-form" class="btn pricing-btn pricing-btn-outline">
+              Choose Gold plan
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership application form -->
+    <section class="section section--light" id="membership-form">
+      <div class="container">
+        <header class="section-header reveal">
+          <div class="section-kicker">Join</div>
+          <h2 class="section-title">Become a member</h2>
+          <p class="section-subtitle">
+            Fill in the form below and the Chamber will contact you with details
+            about membership categories, fees and next steps.
+          </p>
+        </header>
+
+        <div class="split">
+          <div class="reveal">
+            <form class="form" method="POST" action="https://formspree.io/f/xpqaokaq">
+              <input type="hidden" name="_subject" value="New SMCC Membership Request" />
+              <input type="hidden" name="_next" value="https://smcc.mk/thanks.html" />
+
+              <div style="position: absolute; left: -9999px">
+                <label
+                  >Website
+                  <input type="text" name="website" tabindex="-1" autocomplete="off" />
+                </label>
+              </div>
+
+              <div class="form-row">
+                <div>
+                  <label class="label" for="company-name">Company name *</label>
+                  <input class="input" type="text" id="company-name" name="company_name" required />
+                </div>
+
+                <div>
+                  <label class="label" for="country">Country *</label>
+                  <select class="select" id="country" name="country" required>
+                    <option value="">Select country</option>
+                    <option value="Sweden">Sweden</option>
+                    <option value="North Macedonia">North Macedonia</option>
+                    <option value="Both / other">Both / other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div>
+                  <label class="label" for="contact-person">Contact person *</label>
+                  <input class="input" type="text" id="contact-person" name="contact_person" required />
+                </div>
+
+                <div>
+                  <label class="label" for="position">Position / role</label>
+                  <input class="input" type="text" id="position" name="position_role" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div>
+                  <label class="label" for="email">Email *</label>
+                  <input class="input" type="email" id="email" name="email" required />
+                </div>
+
+                <div>
+                  <label class="label" for="phone">Phone</label>
+                  <input class="input" type="tel" id="phone" name="phone" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div>
+                  <label class="label" for="sector">Sector / main activities</label>
+                  <input class="input" type="text" id="sector" name="sector_main_activities" />
+                </div>
+
+                <div>
+                  <label class="label" for="plan">Preferred membership plan</label>
+                  <select class="select" id="plan" name="preferred_membership_plan">
+                    <option value="">Select plan</option>
+                    <option value="Bronze">Bronze</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Gold">Gold</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="label" for="message">Short description of your interest in SMCC</label>
+                <textarea
+                  class="textarea"
+                  id="message"
+                  name="interest_description"
+                  rows="4"
+                  placeholder="For example: market entry support, networking, project collaboration..."
+                ></textarea>
+              </div>
+
+              <div class="consent">
+                <input
+                  class="checkbox"
+                  type="checkbox"
+                  id="consent-members"
+                  name="privacy_consent"
+                  value="yes"
+                  required
+                />
+                <label for="consent-members">
+                  I agree that my data will be stored by the SMCC for the purpose of processing my
+                  membership request, in line with the <a href="privacy.html">Privacy Policy</a>.
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="margin-top: 12px">
+                Submit membership request
+              </button>
+            </form>
+          </div>
+
+          <div class="reveal" data-delay="1">
+            <div class="contact-card">
+              <h3 class="card-title">Membership categories</h3>
+              <p class="card-body">
+                SMCC offers several membership categories tailored to the size and profile of your
+                organization, ranging from smaller companies to large corporate partners. Bronze,
+                Silver and Gold tiers provide increasing levels of visibility and involvement.
+              </p>
+              <p class="card-body">
+                Detailed information about the practical benefits, invoicing and terms can be
+                provided upon request. The Chamber also offers strategic partnership packages for
+                organizations that wish to be closely involved in the development of activities.
+              </p>
+
+              <h3 class="card-title" style="margin-top: 16px">Questions?</h3>
+              <p class="card-body">
+                For any questions regarding membership, please contact the Chamber at
+                <strong>info@smcc.mk</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gold / Silver / Bronze members (PREMIUM placeholders, above disclaimer) -->
+    <section class="member-tiers">
+      <div class="container">
+        <header class="tiers-header reveal">
+          <div class="section-kicker">Members</div>
+          <h2 class="tiers-title">Gold, Silver &amp; Bronze Members</h2>
+          <p class="tiers-subtitle">
+            Member tiers will be announced soon. Interested in becoming a Gold, Silver or Bronze
+            member? <a href="contact.html">Contact us</a>.
+          </p>
+        </header>
+
+        <!-- GOLD -->
+        <div class="tier-block tier-block--gold reveal" data-delay="1">
+          <div class="tier-head">
+            <div class="tier-left">
+              <h3 class="tier-name">
+                Gold Members <span class="tier-badge tier-badge--gold">Gold</span>
+              </h3>
+              <div class="tier-meta">Premium visibility • Priority events • Strategic network</div>
+            </div>
+
+            <a href="contact.html" class="tier-cta">Apply for Gold</a>
+          </div>
+
+          <div class="tier-strip">
+            <strong>Founding Gold members</strong> receive priority placement and curated
+            introductions during the first year.
+          </div>
+
+          <div class="tier-grid">
+            <div class="tier-logo tier-logo--locked">
+              <div class="tier-lock" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-7-2a2 2 0 1 1 4 0v2h-4V7zm8 12H7v-8h11v8z"
+                  />
+                </svg>
+              </div>
+              <div class="tier-lock-text">
+                <strong>Members announced soon</strong>
+                <span>Become a founding Gold member</span>
+              </div>
+            </div>
+
+            <div class="tier-logo tier-logo--locked">
+              <div class="tier-lock" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-7-2a2 2 0 1 1 4 0v2h-4V7zm8 12H7v-8h11v8z"
+                  />
+                </svg>
+              </div>
+              <div class="tier-lock-text">
+                <strong>Members announced soon</strong>
+                <span>Visibility across both markets</span>
+              </div>
+            </div>
+
+            <div class="tier-logo tier-logo--locked">
+              <div class="tier-lock" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-7-2a2 2 0 1 1 4 0v2h-4V7zm8 12H7v-8h11v8z"
+                  />
+                </svg>
+              </div>
+              <div class="tier-lock-text">
+                <strong>Members announced soon</strong>
+                <span>Priority invitations</span>
+              </div>
+            </div>
+
+            <div class="tier-logo tier-logo--locked">
+              <div class="tier-lock" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-7-2a2 2 0 1 1 4 0v2h-4V7zm8 12H7v-8h11v8z"
+                  />
+                </svg>
+              </div>
+              <div class="tier-lock-text">
+                <strong>Members announced soon</strong>
+                <span>Request the tier pack</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SILVER -->
+        <div class="tier-block tier-block--silver reveal" data-delay="2">
+          <div class="tier-head">
+            <div class="tier-left">
+              <h3 class="tier-name">
+                Silver Members <span class="tier-badge tier-badge--silver">Silver</span>
+              </h3>
+              <div class="tier-meta">Higher visibility • Co-host events • Priority invites</div>
+            </div>
+
+            <a href="contact.html" class="tier-cta tier-cta--light">Apply for Silver</a>
+          </div>
+
+          <div class="tier-strip">
+            <strong>Silver members</strong> get enhanced placement on SMCC channels and priority
+            access to selected events.
+          </div>
+
+          <div class="tier-grid">
+            <!-- ✅ REAL SILVER MEMBER: Volvo -->
+            <div class="tier-logo tier-logo--member" title="Volvo (Silver Member)">
+              <a href="#" aria-label="Volvo (Silver Member)">
+                <img src="assets/img/Volvo-Logo.png" alt="Volvo logo" />
+              </a>
+            </div>
+
+            <!-- locked placeholders -->
+            <div class="tier-logo tier-logo--locked">
+              <div class="tier-lock" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-7-2a2 2 0 1 1 4 0v2h-4V7zm8 12H7v-8h11v8z"
+                  />
+                </svg>
+              </div>
+              <div class="tier-lock-text">
+                <strong>Members announced soon</strong>
+                <span>Priority invitations</span>
+              </div>
+            </div>
+
+            <div class="tier-logo tier-logo--locked">
+              <div class="tier-lock" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-7-2a2 2 0 1 1 4 0v2h-4V7zm8 12H7v-8h11v8z"
+                  />
+                </svg>
+              </div>
+              <div class="tier-lock-text">
+                <strong>Members announced soon</strong>
+                <span>Co-host opportunities</span>
+              </div>
+            </div>
+
+            <div class="tier-logo tier-logo--locked">
+              <div class="tier-lock" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-7-2a2 2 0 1 1 4 0v2h-4V7zm8 12H7v-8h11v8z"
+                  />
+                </svg>
+              </div>
+              <div class="tier-lock-text">
+                <strong>Members announced soon</strong>
+                <span>Request the tier pack</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BRONZE -->
+        <div class="tier-block tier-block--bronze reveal" data-delay="3">
+          <div class="tier-head">
+            <div class="tier-left">
+              <h3 class="tier-name">
+                Bronze Members <span class="tier-badge tier-badge--bronze">Bronze</span>
+              </h3>
+              <div class="tier-meta">Network access • Member rates • Directory listing</div>
+            </div>
+
+            <a href="#membership-form" class="tier-cta tier-cta--light">Apply for Bronze</a>
+          </div>
+
+          <div class="tier-strip">
+            <strong>Bronze members</strong> are featured in the member directory and get access to
+            SMCC events at member rates.
+          </div>
+
+          <div class="tier-grid">
+            <!-- placeholders (you said you have 3 bronze companies later; add them same way as Volvo) -->
+
+<div class="tier-logo tier-logo--member" title="UltraClean (Bronze Member)">
+  <a href="#" aria-label="UltraClean (Bronze Member)">
+    <img src="assets/img/UltraClean.jpg" alt="UltraClean Logo" />
+  </a>
+</div>
+
+<div class="tier-logo tier-logo--member" title="Ease Access (Bronze Member)">
+  <a href="#" aria-label="Ease Access (Bronze Member)">
+    <img src="assets/img/Ease Access Horizontal Logo.svg" alt="EaseAccess Logo" />
+  </a>
+</div>
+
+<div class="tier-logo tier-logo--member" title="Banzae (Bronze Member)">
+  <a href="#" aria-label="Banzae (Bronze Member)">
+    <img src="assets/img/Banzae.png" alt="Banzae Logo" />
+  </a>
+</div>
+
+            <div class="tier-logo tier-logo--locked">
+              <div class="tier-lock" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-7-2a2 2 0 1 1 4 0v2h-4V7zm8 12H7v-8h11v8z"
+                  />
+                </svg>
+              </div>
+              <div class="tier-lock-text">
+                <strong>Members announced soon</strong>
+                <span>Request the tier pack</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="smcc-disclaimer">
+      <div class="container">
+        <div class="smcc-disclaimer-box reveal">
+          <h3 class="smcc-disclaimer-title">IMPORTANT DISCLAIMER</h3>
+          <p class="smcc-disclaimer-text">
+            Although the Swedish-Macedonian Chamber of Commerce (SMCC) and its representatives
+            always strive to use their best efforts in relations with members, SMCC takes no
+            responsibility (and shall have no liability) for its assistance in connecting members
+            to each other or to third parties. Any transactions or relationships that may result
+            from such referrals are undertaken at the member's own risk, and SMCC urges all
+            members to conduct their own thorough due diligence and research before entering into
+            any arrangements with another member or third party.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer-cc">
+      <div class="footer-cc-inner">
+        <!-- Left -->
+        <div class="footer-cc-left">
+          <div class="footer-cc-watermark" aria-hidden="true"></div>
+
+          <div class="footer-cc-flag">
+            <img
+              src="assets/img/_White_no_txt 1.png"
+              alt="Swedish–Macedonian Chamber of Commerce emblem"
+            />
+          </div>
+
+          <div class="footer-cc-org">
+            <div class="footer-cc-org-name">
+              Swedish–Macedonian Chamber of Commerce (SMCC)
+            </div>
+            <div class="footer-cc-org-id">
+              Organization ID: 502100-0327 / 7871015
+            </div>
+          </div>
+
+          <div class="footer-cc-cols">
+            <div class="footer-cc-col">
+              <div class="footer-cc-col-title">Visitor Address</div>
+              <div class="footer-cc-line">
+                <span class="footer-cc-label">North Macedonia:</span>
+                Zvanska 5, 1000 Skopje
+              </div>
+              <div class="footer-cc-line">
+                <span class="footer-cc-label">Sweden:</span>
+                Riddargatan 35, 100 55 Stockholm
+              </div>
+            </div>
+
+            <div class="footer-cc-col">
+              <div class="footer-cc-col-title">Contact Details</div>
+              <div class="footer-cc-line">
+                <span class="footer-cc-label">Tel:</span>
+                +46 (0)70 336 07 18 / +389 (0)78 930 999
+              </div>
+              <div class="footer-cc-line">
+                <span class="footer-cc-label">Email:</span>
+                <a class="footer-cc-link" href="mailto:info@smcc.mk">info@smcc.mk</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="footer-cc-right">
+          <div class="footer-cc-news">
+            <div class="footer-cc-news-kicker">Subscribe to our</div>
+            <div class="footer-cc-news-title">Newsletter</div>
+
+            <form class="footer-cc-form" action="#" method="post">
+              <label class="footer-cc-field">
+                <span>First Name <span class="req">*</span></span>
+                <input type="text" name="firstName" required />
+              </label>
+
+              <label class="footer-cc-field">
+                <span>Last Name <span class="req">*</span></span>
+                <input type="text" name="lastName" required />
+              </label>
+
+              <label class="footer-cc-field">
+                <span>Email <span class="req">*</span></span>
+                <input type="email" name="email" required />
+              </label>
+
+              <button class="footer-cc-submit" type="submit">Submit</button>
+            </form>
+          </div>
+
+          <div class="footer-cc-social-icons">
+            <!-- Facebook -->
+            <a
+              href="https://www.facebook.com/people/Swedish-Macedonian-Chamber-of-Commerce-SMCC/61578883811108/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              class="footer-cc-social-btn"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="footer-cc-social-icon">
+                <path
+                  d="M22 12a10 10 0 1 0-11.56 9.88v-7h-2.1V12h2.1V9.8c0-2.07 1.23-3.22 3.12-3.22.9 0 1.84.16 1.84.16v2.03h-1.04c-1.02 0-1.34.64-1.34 1.3V12h2.28l-.36 2.88h-1.92v7A10 10 0 0 0 22 12z"
+                />
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/company/swedish-macedonian-chamber-of-commerce/posts/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              class="footer-cc-social-btn"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="footer-cc-social-icon">
+                <path
+                  d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3V9zm7 0h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05C21 8.59 22 10.8 22 13.7V21h-4v-6.3c0-1.5-.03-3.43-2.1-3.43-2.1 0-2.42 1.64-2.42 3.32V21h-4V9z"
+                />
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/swemaccham/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              class="footer-cc-social-btn"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="footer-cc-social-icon">
+                <path
+                  d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm4.5-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"
+                />
+              </svg>
+            </a>
+
+            <!-- YouTube -->
+            <a
+              href="https://www.youtube.com/@swemaccham"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              class="footer-cc-social-btn"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="footer-cc-social-icon">
+                <path
+                  d="M23.5 6.2s-.23-1.63-.94-2.35c-.9-.94-1.91-.94-2.37-1C16.88 2.5 12 2.5 12 2.5h-.01s-4.88 0-8.19.35c-.46.06-1.47.06-2.37 1C.73 4.57.5 6.2.5 6.2S.25 8.11.25 10.03v1.94c0 1.91.25 3.83.25 3.83s.23 1.63.94 2.35c.9.94 2.08.91 2.61 1.01 1.89.18 8 .34 8 .34s4.88-.01 8.19-.36c.46-.06 1.47-.06 2.37-1 .71-.72.94-2.35.94-2.35s.25-1.92.25-3.83v-1.94c0-1.92-.25-3.83-.25-3.83zM9.75 13.6V6.9l6.1 3.35-6.1 3.35z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom legal bar (links + copyright) -->
+      <div class="footer-cc-legal">
+        <div class="footer-cc-legal-inner">
+          <div class="footer-cc-legal-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms &amp; Conditions</a>
+            <a href="cookies.html">SMCC Cookie Policy</a>
+          </div>
+
+          <div class="footer-cc-copy">
+            © <span id="year"></span> Swedish–Macedonian Chamber of Commerce (SMCC)
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear().toString();
+    </script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

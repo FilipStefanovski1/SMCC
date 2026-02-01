@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Events – Swedish–Macedonian Chamber of Commerce</title>
+    <meta
+      name="description"
+      content="Upcoming and past events organised by the Swedish–Macedonian Chamber of Commerce."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- Small page-only fixes (safe) -->
+    <style>
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      /* Ensures past-event images always have readable contrast if any text overlaps */
+      .news-card-image {
+        position: relative;
+        overflow: hidden;
+      }
+      .news-card-image::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.45),
+          rgba(0, 0, 0, 0.05)
+        );
+        pointer-events: none;
+      }
+
+      /* Upcoming events (screenshot-style list) */
+      .upcoming-events {
+        margin-top: 18px;
+        display: grid;
+        gap: 18px;
+      }
+
+      .upcoming-event {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 18px;
+  align-items: center;
+  background: #ffffff; /* white */
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.upcoming-event__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 84px;
+  border-right: 1px solid rgba(15, 23, 42, 0.12);
+  padding-right: 18px;
+}
+
+.upcoming-event__logo img {
+  max-height: 60px;
+  max-width: 120px;
+  object-fit: contain;
+  display: block;
+}
+
+.upcoming-event__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #0f172a; /* black */
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.upcoming-event__meta {
+  margin-top: 6px;
+  color: rgba(15, 23, 42, 0.75);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.upcoming-event__meta strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+
+      @media (max-width: 780px) {
+        .upcoming-event {
+          grid-template-columns: 1fr;
+          text-align: left;
+        }
+        .upcoming-event__logo {
+          border-right: 0;
+          padding-right: 0;
+          justify-content: flex-start;
+          height: auto;
+        }
+      }
+    </style>
+        <script src="https://widget.easeaccess24.com/sdk.js?key=R3Nm9UmVcX"></script>
+  </head>
+
+  <body>
+    <!-- Cookie banner MUST be inside body -->
+    <div id="cookieBanner" class="cookie-banner">
+      <div class="cookie-banner__inner">
+        <div class="cookie-banner__text">
+          <strong>Cookies & privacy</strong>
+          <p>
+            We use cookies to analyse traffic and improve your experience.
+            Analytics cookies are only loaded after your consent.
+            <a href="cookies.html">Learn more</a>.
+          </p>
+        </div>
+
+        <div class="cookie-banner__actions">
+          <button id="cookieReject" class="btn btn-outline cookie-btn">
+            Reject
+          </button>
+          <button id="cookieAccept" class="btn btn-primary cookie-btn">
+            Accept
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="brand">
+          <div class="brand-logo">
+            <img src="assets/img/logo-smcc.png" alt="SMCC logo" />
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">SWEDISH–MACEDONIAN</span>
+            <span class="brand-subtitle">Chamber of Commerce</span>
+          </div>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="nav-toggle-bar"></span>
+        </button>
+
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="members.html" class="nav-link">Members</a></li>
+            <li><a href="partners.html" class="nav-link">Partners</a></li>
+            <li><a href="news.html" class="nav-link">News</a></li>
+            <li><a href="events.html" class="nav-link active">Events</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Events section -->
+    <section class="section section--light">
+      <div class="container">
+        <header class="section-header reveal">
+          <div class="section-kicker">Events</div>
+          <h1 class="section-title">Upcoming activities</h1>
+          <p class="section-subtitle">
+            SMCC organises a mix of physical and online activities – from
+            high-level delegations to practical workshops and informal networking
+            events.
+          </p>
+        </header>
+
+        <!-- Upcoming events list -->
+        <div class="upcoming-events">
+          <article class="upcoming-event reveal" data-delay="1">
+            <div class="upcoming-event__logo">
+              <img
+                src="assets/img/Invest North Macedonia.png"
+                alt="Invest North Macedonia"
+              />
+            </div>
+            <div>
+              <h3 class="upcoming-event__title">
+                North Macedonia Investment Forum
+              </h3>
+              <div class="upcoming-event__meta">
+                <strong>March 2026</strong> · With Invest North Macedonia
+              </div>
+            </div>
+          </article>
+
+          <article class="upcoming-event reveal" data-delay="2">
+            <div class="upcoming-event__logo">
+              <img src="assets/img/NAITM Logo.jpg" alt="NAITM" />
+            </div>
+            <div>
+              <h3 class="upcoming-event__title">
+                North Macedonia Tourism Roadshow
+              </h3>
+              <div class="upcoming-event__meta">
+                <strong>March 2026</strong> · With NAITM
+              </div>
+            </div>
+          </article>
+
+          <article class="upcoming-event reveal" data-delay="4">
+            <div class="upcoming-event__logo">
+              <img
+                src="assets/img/Macedonia2025.webp"
+                alt="Macedonia 2025"
+              />
+            </div>
+            <div>
+              <h3 class="upcoming-event__title">
+                Swedish-Macedonian Business Forum
+              </h3>
+              <div class="upcoming-event__meta">
+                <strong>May 2026</strong> · With Macedonia2025
+              </div>
+            </div>
+          </article>
+          
+          <article class="upcoming-event reveal" data-delay="3">
+            <div class="upcoming-event__logo">
+              <img
+                src="assets/img/Phoenix Rising.png"
+                alt="Phoenix Rising"
+              />
+            </div>
+            <div>
+              <h3 class="upcoming-event__title">Brand Expansion Conference</h3>
+              <div class="upcoming-event__meta">
+                <strong>October 2026</strong> · With Phoenix Rising
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Keep the code for later (hidden for now) -->
+        <!--
+        <div class="events-list">
+          ...
+        </div>
+        -->
+      </div>
+    </section>
+
+    <!-- Past events -->
+    <section class="section section--navy">
+      <div class="container">
+        <header class="section-header reveal">
+          <div class="section-kicker">Past events</div>
+          <h2 class="section-title">Highlights from previous activities</h2>
+          <p class="section-subtitle">
+            A selection of past events organised by SMCC in cooperation with its
+            partners.
+          </p>
+        </header>
+
+        <div class="news-grid">
+          <article class="news-card reveal" data-delay="1">
+            <div class="news-card-image">
+              <img src="assets/img/Inauguration SMCC.jpeg" alt="Event" />
+            </div>
+            <div class="news-card-body">
+              <div class="news-meta">16 December 2025</div>
+              <h3 class="news-title">Inauguration of SMCC</h3>
+              <p class="news-excerpt">
+                Official Launch of the Swedish-Macedonian Chamber of Commerce in
+                Skopje.
+                
+              </p>
+            </div>
+          </article>
+
+          <article class="news-card reveal" data-delay="2">
+            <div class="news-card-image">
+              <img
+                src="assets/img/Christmas Mingle Event 4Dec.jpg"
+                alt="Event"
+              />
+            </div>
+            <div class="news-card-body">
+              <div class="news-meta">4 December 2025</div>
+              <h3 class="news-title">Christmas Mingle Stockholm</h3>
+              <p class="news-excerpt">
+                Join us for an evening of art, networking, business conversations,
+                and light refreshments!
+              </p>
+            </div>
+          </article>
+
+          <article class="news-card reveal" data-delay="3">
+            <div class="news-card-image">
+              <img src="assets/img/Groupphoto.JPG" alt="Event" />
+            </div>
+            <div class="news-card-body">
+              <div class="news-meta">24 October 2025</div>
+              <h3 class="news-title">Official Board Launch Event</h3>
+              <p class="news-excerpt">
+                SMCC invites its newly elected Board to the official launch event
+                in Stockholm, marking the beginning of the Chamber’s work to
+                strengthen business ties between Sweden and North Macedonia. 
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW FOOTER -->
+    <footer class="site-footer-cc">
+      <div class="footer-cc-inner">
+        <!-- Left -->
+        <div class="footer-cc-left">
+          <div class="footer-cc-watermark" aria-hidden="true"></div>
+
+          <div class="footer-cc-flag">
+            <img
+              src="assets/img/_White_no_txt 1.png"
+              alt="Swedish–Macedonian Chamber of Commerce emblem"
+            />
+          </div>
+
+          <div class="footer-cc-org">
+            <div class="footer-cc-org-name">
+              Swedish–Macedonian Chamber of Commerce (SMCC)
+            </div>
+            <div class="footer-cc-org-id">
+              Organization ID: 502100-0327 / 7871015
+            </div>
+          </div>
+
+          <div class="footer-cc-cols">
+            <div class="footer-cc-col">
+              <div class="footer-cc-col-title">Visitor Address</div>
+              <div class="footer-cc-line">
+                <span class="footer-cc-label">North Macedonia:</span>
+                Zvanska 5, 1000 Skopje
+              </div>
+              <div class="footer-cc-line">
+                <span class="footer-cc-label">Sweden:</span>
+                Riddargatan 35, 100 55 Stockholm
+              </div>
+            </div>
+
+            <div class="footer-cc-col">
+              <div class="footer-cc-col-title">Contact Details</div>
+              <div class="footer-cc-line">
+                <span class="footer-cc-label">Tel:</span>
+                +46 (0)70 336 07 18 / +389 (0)78 930 999
+              </div>
+              <div class="footer-cc-line">
+                <span class="footer-cc-label">Email:</span>
+                <a class="footer-cc-link" href="mailto:info@smcc.mk"
+                  >info@smcc.mk</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="footer-cc-right">
+          <div class="footer-cc-news">
+            <div class="footer-cc-news-kicker">Subscribe to our</div>
+            <div class="footer-cc-news-title">Newsletter</div>
+
+            <form class="footer-cc-form" action="#" method="post">
+              <label class="footer-cc-field">
+                <span>First Name <span class="req">*</span></span>
+                <input type="text" name="firstName" required />
+              </label>
+
+              <label class="footer-cc-field">
+                <span>Last Name <span class="req">*</span></span>
+                <input type="text" name="lastName" required />
+              </label>
+
+              <label class="footer-cc-field">
+                <span>Email <span class="req">*</span></span>
+                <input type="email" name="email" required />
+              </label>
+
+              <button class="footer-cc-submit" type="submit">Submit</button>
+            </form>
+          </div>
+
+          <div class="footer-cc-social-icons">
+            <!-- Facebook -->
+            <a
+              href="https://www.facebook.com/people/Swedish-Macedonian-Chamber-of-Commerce-SMCC/61578883811108/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              class="footer-cc-social-btn"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                class="footer-cc-social-icon"
+              >
+                <path
+                  d="M22 12a10 10 0 1 0-11.56 9.88v-7h-2.1V12h2.1V9.8c0-2.07 1.23-3.22 3.12-3.22.9 0 1.84.16 1.84.16v2.03h-1.04c-1.02 0-1.34.64-1.34 1.3V12h2.28l-.36 2.88h-1.92v7A10 10 0 0 0 22 12z"
+                />
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/company/swedish-macedonian-chamber-of-commerce/posts/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              class="footer-cc-social-btn"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                class="footer-cc-social-icon"
+              >
+                <path
+                  d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3V9zm7 0h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05C21 8.59 22 10.8 22 13.7V21h-4v-6.3c0-1.5-.03-3.43-2.1-3.43-2.1 0-2.42 1.64-2.42 3.32V21h-4V9z"
+                />
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/swemaccham/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              class="footer-cc-social-btn"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                class="footer-cc-social-icon"
+              >
+                <path
+                  d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm4.5-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"
+                />
+              </svg>
+            </a>
+
+            <!-- YouTube -->
+            <a
+              href="https://www.youtube.com/@swemaccham"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              class="footer-cc-social-btn"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                class="footer-cc-social-icon"
+              >
+                <path
+                  d="M23.5 6.2s-.23-1.63-.94-2.35c-.9-.94-1.91-.94-2.37-1C16.88 2.5 12 2.5 12 2.5h-.01s-4.88 0-8.19.35c-.46.06-1.47.06-2.37 1C.73 4.57.5 6.2.5 6.2S.25 8.11.25 10.03v1.94c0 1.91.25 3.83.25 3.83s.23 1.63.94 2.35c.9.94 2.08.91 2.61 1.01 1.89.18 8 .34 8 .34s4.88-.01 8.19-.36c.46-.06 1.47-.06 2.37-1 .71-.72.94-2.35.94-2.35s.25-1.92.25-3.83v-1.94c0-1.92-.25-3.83-.25-3.83zM9.75 13.6V6.9l6.1 3.35-6.1 3.35z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom legal bar -->
+      <div class="footer-cc-legal">
+        <div class="footer-cc-legal-inner">
+          <div class="footer-cc-legal-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms &amp; Conditions</a>
+            <a href="cookies.html">SMCC Cookie Policy</a>
+          </div>
+
+          <div class="footer-cc-copy">
+            © <span id="year"></span> Swedish–Macedonian Chamber of Commerce
+            (SMCC)
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script>
+      document.getElementById("year").textContent =
+        new Date().getFullYear().toString();
+    </script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
